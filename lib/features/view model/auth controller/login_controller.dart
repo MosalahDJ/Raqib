@@ -107,7 +107,7 @@ class LoginController extends GetxController {
     try {
       await _supabase.auth.resetPasswordForEmail(
         emailController.text,
-        redirectTo: 'com.trade.lawe://auth-callback/#type=recovery',
+        redirectTo: 'com.raqib://auth-callback/#type=recovery',
       );
       Get.snackbar('Success', 'Password reset email sent! Check your inbox.');
     } catch (error) {

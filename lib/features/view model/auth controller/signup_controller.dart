@@ -64,7 +64,7 @@ class SignupController extends GetxController {
       final AuthResponse response = await _supabase.auth.signUp(
         email: email,
         password: password,
-        emailRedirectTo: 'com.trade.lawe://auth-callback/',
+        emailRedirectTo: 'com.raqib://auth-callback/',
         data: {
           'name': name.text,
           'lastName': lastName.text,
@@ -102,7 +102,6 @@ class SignupController extends GetxController {
         }
       }
     } catch (e) {
-
       Get.snackbar(
         'Error',
         e.toString(),
