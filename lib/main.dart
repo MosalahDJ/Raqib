@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'core/Utils/binding.dart';
 import 'core/Utils/size_config.dart';
 import 'core/localization/translations.dart';
@@ -17,12 +18,11 @@ import 'myrouts.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  final String url = dotenv.env['supabaseUrl']!;
+  final String anonKey = dotenv.env['supabaseAnonKey']!;
+
   // Initialize Supabase
-  await Supabase.initialize(
-    url: 'https://juktdohsepycmmgtmddf.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp1a3Rkb2hzZXB5Y21tZ3RtZGRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg3MDcxOTUsImV4cCI6MjA2NDI4MzE5NX0.n-AceFZf2IwAy8gq5-xawOjJ6KFVcC-AoY6lyIE69Yw',
-  );
+  await Supabase.initialize(url: url, anonKey: anonKey);
 
   final prefs = await SharedPreferences.getInstance();
 
