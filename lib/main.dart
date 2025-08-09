@@ -17,6 +17,7 @@ import 'myrouts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
 
   final String url = dotenv.env['supabaseUrl']!;
   final String anonKey = dotenv.env['supabaseAnonKey']!;

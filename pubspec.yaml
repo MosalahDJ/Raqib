@@ -90,6 +90,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   # assets:
   assets:
+    - .env
     - lib/core/assets/images/app_logo/
     - lib/core/assets/images/homeimages/
     - lib/core/assets/images/login_images/
