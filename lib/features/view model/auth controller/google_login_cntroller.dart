@@ -11,8 +11,6 @@ class GoogleLoginCntroller extends GetxController {
   final _supabase = Supabase.instance.client;
   final String _clientId = dotenv.env['googleOAuthClientId']!;
 
-  // Example method to initiate Google sign-in
-
   // Google Sign-In
   Future<void> signInWithGoogle() async {
     try {
@@ -40,6 +38,10 @@ class GoogleLoginCntroller extends GetxController {
         Get.offAllNamed('/home');
       }
     } catch (e) {
+      print("_____________________________________");
+      print(e);
+      print("_____________________________________");
+
       Get.snackbar(
         'Error',
         'Failed to sign in with Google: ${e.toString()}',
