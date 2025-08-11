@@ -23,7 +23,7 @@ class ThemeController extends GetxController {
     if (savedTheme != null) {
       selectedTheme.value = AppTheme.values.firstWhere(
         (e) => e.toString() == savedTheme,
-        orElse: () => AppTheme.system,
+        orElse: () => AppTheme.light,
       );
     }
 
