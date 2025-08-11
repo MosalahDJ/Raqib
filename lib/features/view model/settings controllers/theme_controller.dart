@@ -6,7 +6,7 @@ import '../../../core/theme/thems.dart';
 enum AppTheme { light, dark, system }
 
 class ThemeController extends GetxController {
-  var selectedTheme = AppTheme.light.obs;
+  var selectedTheme = AppTheme.system.obs;
   late SharedPreferences prefs;
   final RxBool isDarkModeRx = false.obs;
 
@@ -23,7 +23,7 @@ class ThemeController extends GetxController {
     if (savedTheme != null) {
       selectedTheme.value = AppTheme.values.firstWhere(
         (e) => e.toString() == savedTheme,
-        orElse: () => AppTheme.light,
+        orElse: () => AppTheme.system,
       );
     }
 
