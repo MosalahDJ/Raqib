@@ -64,7 +64,7 @@ class SignupController extends GetxController {
       final AuthResponse response = await _supabase.auth.signUp(
         email: email,
         password: password,
-        emailRedirectTo: 'com.raqib://auth-callback/',
+        emailRedirectTo: 'com.example.raqib://auth-callback/',
         data: {
           'name': name.text,
           'lastName': lastName.text,

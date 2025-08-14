@@ -5,8 +5,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class GoogleLoginCntroller extends GetxController {
-  // Add your Google login logic here
-  // For example, you can use the GoogleSignIn package to handle Google authentication
+
+  // signin in with google
   final isLoading = false.obs;
   final _supabase = Supabase.instance.client;
   final String _clientId = dotenv.env['googleOAuthClientId']!;
@@ -16,7 +16,7 @@ class GoogleLoginCntroller extends GetxController {
     try {
       isLoading.value = true;
 
-      // Configure Google Sign In with your web client ID
+      // Configure Google Sign In with web client ID
       final GoogleSignIn googleSignIn = GoogleSignIn(
         clientId: _clientId,
         scopes: ['email', 'profile'],

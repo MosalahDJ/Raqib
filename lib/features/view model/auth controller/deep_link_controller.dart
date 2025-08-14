@@ -43,7 +43,7 @@ class DeepLinkController extends GetxController {
       final uri = Uri.parse(link);
 
       // Check if this is an auth callback
-      if (uri.host == 'auth-callback' && uri.scheme == 'com.raqib') {
+      if (uri.host == 'auth-callback' && uri.scheme == 'com.example.raqib') {
         await _handleAuthCallback(uri);
       }
     } catch (e) {
