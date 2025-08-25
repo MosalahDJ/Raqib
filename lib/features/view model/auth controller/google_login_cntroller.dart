@@ -5,7 +5,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class GoogleLoginCntroller extends GetxController {
-
   // signin in with google
   final isLoading = false.obs;
   final _supabase = Supabase.instance.client;
@@ -14,7 +13,7 @@ class GoogleLoginCntroller extends GetxController {
   // Google Sign-In
   Future<void> signInWithGoogle() async {
     try {
-      isLoading.value = true; 
+      isLoading.value = true;
 
       // Configure Google Sign In with web client ID
       final GoogleSignIn googleSignIn = GoogleSignIn(
